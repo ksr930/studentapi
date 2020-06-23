@@ -1,0 +1,51 @@
+<%- include ('partials/header') %>
+
+<div class='jumbotron'>
+<h1>USER DETAIL </h1>
+<a href='/' class='btn btn-lg '>HOME</a>
+</div>
+
+
+
+
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-8'>
+
+
+<ul class='list-group'>
+
+<% userdetail.forEach(m=>{ %>
+
+<li class="list-group-item"> <h4> USERNAME </h1> <%= m.name %> </li>
+
+<a href ='/api/user/<%= m._id %>' class='btn btn-lg btn-primary' > MORE DETAIL</a>
+
+<a href ='/api/user/<%= m._id %>/edit' class='btn btn-lg btn-secondary' > Edit Detail</a>
+
+
+<form id = "delete-form" action="/api/user/<%= m._id %>?_method=DELETE" method="POST">
+<button class="btn btn-danger btn-lg">DELETE</button>
+</form>
+
+
+<br>
+
+
+
+
+
+<% })  %>
+  
+<ul>
+
+
+</div> 
+
+
+</div>
+
+
+</div>
+<%- include ('partials/footer') %>

@@ -1,0 +1,32 @@
+<%- include ('partials/header') %>
+
+
+<div class='jumbotron'>
+
+<a href='/' class='btn btn-lg '>HOME</a>
+</div>
+
+<h1>ENTER YOUR DETAIL</h1>
+<form method='POST' action='/api/user/<%= user._id %>?_method=PUT'>
+  <div class="form-group">
+    <label for="USERNAME">USERNAME</label>
+    <input type="text" class="form-control" id="USERNAME" aria-describedby="emailHelp" name='name' placeholder="Enter name" value=<%= user.name %>>
+    
+  </div>
+  <div class="form-group">
+    <label for="CLASS">AGE</label>
+    <input type="number" class="form-control" id="CLASS" placeholder="Age" name='age' value=<%= user.age %>>
+  </div>
+  
+  <div class="form-group">
+    <label for="AGE">CLASS</label>
+    <input type="number" class="form-control" id="AGE" placeholder="CLASS" name='std' value=<%= user.std %>>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+<%- include ('partials/footer') %>
